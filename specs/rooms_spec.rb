@@ -15,7 +15,7 @@ class RoomTest < Minitest::Test
     @guests << person1
     @guests << person2
     @guests << person3
-    
+    @room = Room.new(3)
   end
 
   # def test_guest_array
@@ -23,17 +23,21 @@ class RoomTest < Minitest::Test
   #   assert_equal("John", @guests[0].name)
   # end
 
-  def test_check_in
+  # def test_check_in
     
-    room = Room.new(3)
+  #   @room
 
-    assert_equal(["John1", "Paul2", "Ringo3"], room.check_in(@guests))
-  end
+  #   assert_equal(["John1", "Paul2", "Ringo3"], room.check_in(@guests))
+  # end
 
-  def test_check_out
-    room = Room.new(3)
-    room.check_in(@guests)
-    assert_equal(2, room.check_out("Paul2").count)
+  # def test_check_out
+  #   @room
+  #   room.check_in(@guests)
+  #   assert_equal(2, room.check_out("Paul2").count)
+  # end
+
+  def test_song_array_created
+    assert_equal(4, @room.create_song_array(4))
   end
 
 

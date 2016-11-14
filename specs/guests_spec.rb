@@ -10,9 +10,9 @@ class TestGuest < Minitest::Test
     @guest2 = Guest.new("John")
   end
 
-  # def test_guest_id()
-  #   assert_equal("John1", @guest.give_id)
-  #   assert_equal("John2", @guest2.give_id)
+  # def test_guest_name()
+  #   assert_equal("John", @guest.give_id)
+  #   assert_equal("John", @guest2.give_id)
   # end
 
 end

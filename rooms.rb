@@ -1,5 +1,6 @@
 require_relative('guests')
-require_relative('venue')
+require_relative('songs')
+
 require ('Pry-Byebug')
 
 
@@ -9,6 +10,7 @@ class Room
     @counter = 0
     @guests_in_room = []
     @capacity = capacity
+    @song_array = []
   end 
 
   def check_in(guests=@guests)
@@ -26,19 +28,16 @@ class Room
       return @guests_in_room
   end
 
+  def create_song_array(no_of_songs)
+    counter = 0
+    until counter == no_of_songs
+      name = "test_name"
+      artist = "test_artist"
+      genre = "test_genre"
+
+      @song_array << Song.new(name, artist, genre)
+      counter += 1
+    end
+  end
+
 end
-
-# thing = Room.new()
-
-# puts thing
-
-# def all_guests
-#   counter = 0
-#   no_of_guests = 3
-#   while counter < no_of_guests
-#     guest_name = gets.chomp
-#     @guests << Guest.new("#{guest_name}")
-#     counter += 1
-#   end
-#   @guests.each { |guest| puts guest.name }
-# end
